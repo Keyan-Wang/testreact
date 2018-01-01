@@ -25,7 +25,6 @@ export default class Grid extends Component {
     this.state = { currentSoftSelectId: '' };
 
     this.defaultPcsGridProps = {
-      domLayout: 'autoHeight',
       suppressCellSelection: true,
       suppressClickEdit: true,
       suppressRowClickSelection: true, // Suppress so that a row is only selectable by checking the checkbox
@@ -83,7 +82,7 @@ export default class Grid extends Component {
   onRowClicked = rowEvent => {
     const { onSoftSelectChange, onRowClicked } = this.props;
     if (isFunction(onSoftSelectChange)) onSoftSelectChange(rowEvent.data, rowEvent);
-    if (isFunction(onRowClicked)) onRowClicked(rowEvent);
+    if (isFunction(onRowClicked)) onRowClicked(rowEvent.data);
   };
 
   onRowDoubleClicked = rowEvent => {
@@ -105,7 +104,7 @@ export default class Grid extends Component {
     };
 
     return (
-      <div className="grid-container ag-theme-fresh">
+      <div className={"grid-container ag-theme-fresh " + this.props.className}>
         <AgGridReact {...gridParams} />
       </div>
     );

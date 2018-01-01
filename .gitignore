@@ -12,6 +12,9 @@
 # Sass ignore css files
 src/**/*.css
 
+# Visual studio code
+.vscode/chrome
+
 # misc
 .DS_Store
 .env.local
