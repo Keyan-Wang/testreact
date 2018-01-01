@@ -5,7 +5,7 @@ export default class WeatherService {
         
         // Mock api call
         return new Promise((resolve) => {
-            resolve([...Array(5).keys()].map(idx => {
+            resolve([...Array(100).keys()].map(idx => {
                 var date = new Date();
                 date.setDate(date.getDate() + idx + startDateIndex);
                 var temperature = Math.floor(Math.random() * 40);
