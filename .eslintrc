@@ -1,3 +1,9 @@
 {
-  "extends": "react-app"
+  "extends": "react-app",
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "comma-spacing": [2, { "before": false, "after": true }],
+    "no-multiple-empty-lines": [2, {"max": 1}],
+    "no-trailing-spaces": 2
+  }
 }
