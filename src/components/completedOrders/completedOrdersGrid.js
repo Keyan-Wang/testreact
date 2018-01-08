@@ -33,7 +33,6 @@ class CompletedOrdersGrid extends Component {
   }
 
   componentWillUnmount() {
-    // clearInterval(this.timer);
   }
 
   onSelected = (order) => {

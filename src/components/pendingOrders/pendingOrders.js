@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import PendingOrdersGrid from './pendingOrdersGrid';
-import { actionCreators as orderActionCreators } from '../../store/order';
 
 import './pendingOrders.css';
 
-class PendingOrders extends Component {
+export default class PendingOrders extends Component {
   orderSelected = (order) => {
     console.log('selected');
   }
@@ -18,9 +16,4 @@ class PendingOrders extends Component {
       </div>
     );
   }
-};
-
-export default connect(
-  state => ({ ...state.order }),
-  { ...orderActionCreators }
-)(PendingOrders);
+}

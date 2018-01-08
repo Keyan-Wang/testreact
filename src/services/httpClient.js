@@ -1,5 +1,5 @@
 export default class HttpClient {
-  
+
   static get(url, options) {
     return HttpClient.ajax(url).then(response => {
       return HttpClient.getJson(url, response);
@@ -69,18 +69,18 @@ export default class HttpClient {
       }
     );
   }
-  
+
   static getJson(url, response) {
     if (response && typeof response !== 'undefined') {
       return response.status !== 204 && response.status !== 401 && response.status !== 403
         ? response.json()
         : null;
     }
-  
+
     console.warn("Response object for " + url + " is null.");
     return null;
   }
-  
+
   static setJsonPayload(options, data) {
     options.headers = {
       Accept: 'application/json',
@@ -89,6 +89,4 @@ export default class HttpClient {
     options.body = JSON.stringify(data);
   }
 }
-
-
 
